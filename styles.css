@@ -1,0 +1,113 @@
+:root {
+  --bg-start: #0f2b24;
+  --bg-end: #1a4a3c;
+  --surface: rgba(255, 255, 255, 0.08);
+  --text: #e8f5f0;
+  --muted: #9bbfaf;
+  --accent: #3dd68c;
+  --accent-dark: #1f9a5c;
+  --danger: #e07a5f;
+  --danger-dark: #c45d42;
+  --counter: #e8f5f0;
+  --counter-hot: #ffd166;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(61, 214, 140, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 75%, rgba(255, 209, 102, 0.12), transparent 50%),
+    linear-gradient(160deg, var(--bg-start), var(--bg-end));
+}
+
+.page {
+  width: min(90vw, 420px);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.counter {
+  margin: 2rem 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4rem, 18vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--counter);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.counter.at-limit {
+  color: var(--counter-hot);
+  transform: scale(1.05);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-increment {
+  background-color: var(--accent);
+  color: #0a1f18;
+}
+
+.btn-increment:hover {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-decrement {
+  background-color: var(--danger);
+  color: #1a0f0c;
+}
+
+.btn-decrement:hover {
+  background-color: var(--danger-dark);
+  color: #fff;
+}
